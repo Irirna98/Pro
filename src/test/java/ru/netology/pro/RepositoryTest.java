@@ -16,9 +16,11 @@ public class RepositoryTest {
         repo.add(book2);
         repo.add(book3);
         repo.add(phone1);
-        repo.removeById(3);
-        Product[] actual = repo.findAll();
-        Product[] expected = {book1,book2, phone1};
-        Assertions.assertArrayEquals(expected, actual);
+
+
+        Assertions.assertThrows(RuntimeException.class,
+                () -> repo.removeById(10)
+                );
+
     }
 }
