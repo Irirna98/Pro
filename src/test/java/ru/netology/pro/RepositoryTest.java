@@ -1,4 +1,5 @@
 package ru.netology.pro;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +19,9 @@ public class RepositoryTest {
         repo.add(phone1);
 
 
-        Assertions.assertThrows(RuntimeException.class,
+        Assertions.assertThrows(NotFoundException.class,
                 () -> repo.removeById(10)
-                );
+        );
 
     }
 }
